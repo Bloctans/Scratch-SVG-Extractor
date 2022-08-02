@@ -3,6 +3,7 @@
 
 # Issues
  Pngs cant be exported
+ <br>
  Names with some symbols wont export
 
 # Requirements
