@@ -62,3 +62,18 @@ for sprite in obj["targets"]:
                 print("error with ./sprites/"+sprite["name"]+"/"+costume["name"]+"."+costume["dataFormat"])
         else:
             print("./sprites/"+sprite["name"]+"/"+costume["name"]+"."+costume["dataFormat"] + " isnt an SVG")
+
+print("Cleaning up...")
+
+folder = './extracted'
+for filename in os.listdir(folder):
+    file_path = os.path.join(folder, filename)
+    try:
+        if os.path.isfile(file_path) or os.path.islink(file_path):
+            os.unlink(file_path)
+        elif os.path.isdir(file_path):
+            shutil.rmtree(file_path)
+    except Exception as e:
+        print('Failed to delete %s. Reason: %s' % (file_path, e))
+
+input("File done.")
